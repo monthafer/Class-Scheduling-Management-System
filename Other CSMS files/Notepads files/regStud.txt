@@ -1,0 +1,168 @@
+private void regStudent(ModelUser user) {
+        try {
+            String contact = (String) reg.getContact();
+            String address = (String) reg.getAddress();
+            String fb = (String) reg.getFb();
+            String bio = (String) reg.getBio();
+            String dir = (String) reg.getDir();
+            int sgs = (Integer) reg.getStudGrade();
+            File f;
+            InputStream is;
+
+            PreparedStatement st = (PreparedStatement) dbconn.prepareStatement("INSERT INTO student(first_name,last_name,username,email,password,contact_no,address,facebook,student_desc,img_avatar,sgs_id) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+
+            st.setString(1, user.getFirstName());
+            st.setString(2, user.getLastName());
+            st.setString(3, user.getUserName());
+            st.setString(4, user.getEmail());
+            st.setString(5, user.getPassword());
+            st.setString(6, contact);
+            st.setString(7, address);
+            if (fb.isEmpty() || fb.equals("") || fb == null) {
+                st.setNull(8, java.sql.Types.VARCHAR);
+            } else {
+                st.setString(8, fb);
+            }
+            st.setString(9, bio);
+            if (dir == null) {
+                st.setNull(10, java.sql.Types.BLOB);
+            } else {
+                f = new File(dir);
+                is = new FileInputStream(f);
+                st.setBlob(10, is);
+            }
+            st.setInt(11, sgs);
+
+            st.executeUpdate();
+
+            String sgs1 = "";
+            PreparedStatement st1 = (PreparedStatement) dbconn.prepareStatement("SELECT stud_id, sgs_id FROM student WHERE username=?");
+            st1.setString(1, user.getUserName());
+            ResultSet rset = st1.executeQuery();
+            while (rset.next()) {
+                lginid = rset.getInt("stud_id");
+                sgs1 = String.valueOf(rset.getInt("sgs_id"));
+            }
+            rset.close();
+            st.close();
+
+            SystemProperties pro = new SystemProperties();
+            String pos = "Student";
+
+            pro.save("id", String.valueOf(lginid));
+            pro.save("position", pos);
+            pro.save("sgs", sgs1);
+            reg.setVisible(false);
+
+            showMessage(Message.MessageType.SUCCESS, "Student Registered!");
+            delaytimer = new Timer(2000, new ActionListener() {
+                int delay = 0;
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    delay++;
+                    if (delay == 1) {
+                        dispose();
+                        new csms.loadingscreen.mainload(null, true).setVisible(true);
+                        new mainViewer().setVisible(true);
+                    }
+                }
+            });
+            delaytimer.setRepeats(true);
+            delaytimer.start();
+        } catch (FileNotFoundException | SQLException e) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, e);
+            showMessage(Message.MessageType.ERROR, "Database connection is not available for today");
+        }
+    }
+
+private void buttonagendaadd(){
+        try {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(new Date());
+            String id = txtagendaid.getText();
+            String name = txtagendaname.getText();
+            String desc = txtagendadesc.getText();
+            String repeat = String.valueOf(txtagendarepeat.getSelectedItem());
+            String year = String.valueOf(calendar.get(Calendar.YEAR));
+            String day = convertSingleDigit(Integer.parseInt(String.valueOf(txtagendadateday.getSelectedItem())));
+            String month = convertSingleDigit(txtagendadatemonth.getSelectedIndex() + 1);
+            String date = year + "-" + month + "-" + day;
+            
+            String query = "INSERT INTO agenda(agenda_id,name,description,date,repeatable) VALUES (?,?,?,?,?)";
+            PreparedStatement ps = dbconn.prepareStatement(query);
+            ps.setString(1, id);
+            ps.setString(2, name);
+            ps.setString(3, desc);
+            ps.setString(4, date);
+            ps.setString(5, repeat);
+            ps.executeUpdate();
+            
+            hideall();
+            agendatablepanel.setVisible(true);
+            editagenda.setVisible(true);
+            agendabuttonpanel.setVisible(true);
+            defaultAgenda();
+            sortAgenda();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Form.class.getName()).log(Level.SEVERE, null, ex);
+            databaseErrorMessage();
+        }
+    }
+    private void buttonagendaremove(){
+        try {
+            String id = String.valueOf(agendatable.getValueAt(q, 0));
+            String query = "DELETE FROM agenda WHERE agenda_id=?";
+            PreparedStatement ps = dbconn.prepareStatement(query);
+            ps.setString(1, id);
+            ps.executeUpdate();
+            
+            hideall();
+            agendatablepanel.setVisible(true);
+            editagenda.setVisible(true);
+            agendabuttonpanel.setVisible(true);
+            defaultAgenda();
+            sortAgenda();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Form.class.getName()).log(Level.SEVERE, null, ex);
+            databaseErrorMessage();
+        }
+    }
+    private void buttonagendaupdate(){
+        try {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(new Date());
+            String oldid = String.valueOf(agendatable.getValueAt(q, 0));
+            String id = txtagendaid.getText();
+            String name = txtagendaname.getText();
+            String desc = txtagendadesc.getText();
+            String repeat = String.valueOf(txtagendarepeat.getSelectedItem());
+            String year = String.valueOf(calendar.get(Calendar.YEAR));
+            String day = convertSingleDigit(Integer.parseInt(String.valueOf(txtagendadateday.getSelectedItem())));
+            String month = convertSingleDigit(txtagendadatemonth.getSelectedIndex() + 1);
+            String date = year + "-" + month + "-" + day;
+            
+            String query = "UPDATE agenda SET agenda_id=?, name=?, description=?, date=?, repeatable=? WHERE agenda_id=?";
+            PreparedStatement ps = dbconn.prepareStatement(query);
+            ps.setString(1, id);
+            ps.setString(2, name);
+            ps.setString(3, desc);
+            ps.setString(4, date);
+            ps.setString(5, repeat);
+            ps.setString(6, oldid);
+            ps.executeUpdate();
+            
+            hideall();
+            agendatablepanel.setVisible(true);
+            editagenda.setVisible(true);
+            agendabuttonpanel.setVisible(true);
+            defaultAgenda();
+            sortAgenda();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Form.class.getName()).log(Level.SEVERE, null, ex);
+            databaseErrorMessage();
+        }
+    }

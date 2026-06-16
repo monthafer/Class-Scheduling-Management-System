@@ -1,0 +1,113 @@
+Student Table: student_id (INT, PK), first name, last name, username, email, password 
+contact no., facebook(NULL), student_desc, img avatar (blob, NULL), sgs_id (FK)
+
+Teacher Table: teacher_id (INT, PK), first name, last name, username, email, password 
+contact no., facebook (NULL), institutional_email(NULL), address, consultation hours, consultation days, teacher_desc, img avatar (blob)
+
+Admin Table: admin_id (INT, PK), first name, last name, username, email, password 
+contact no., facebook(NULL), bio, job, job_location, job_info, img avatar (blob)
+
+Subject Table: subject_id (PK), subject name, subject sem, teacher_id (FK), subject day, subject time, location_id (FK), subject_desc, sgs_id (FK, multiple)
+
+SGS Table: sgs_id (PK), strand, grade, section, teacher_adviser(FK)
+
+Location Table: loc_id (PK), place/dep, room (INT), room desc
+
+Agenda table: agenda_id (PK), agenda_name, agenda_desc, agenda_time(NULL), agenda_day, agenda_month, agenda_repeatable(boolean), agenda_subject(NULL)
+
+Message Table: unread(boolean)
+()
+
+Home Table (exp): sgs_id(FK)
+
+CREATE TABLE sgs(
+sgs_id INT PRIMARY KEY NOT NULL,
+strand VARCHAR(30),
+grade INT,
+section VARCHAR(30),
+teacher_adviser INT
+);
+
+CREATE TABLE student(
+stud_id INT PRIMARY KEY NOT NULL,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+username VARCHAR(50) NOT NULL,
+email VARCHAR(75) NOT NULL,
+password VARCHAR(50) NOT NULL,
+contact_no VARCHAR(20) NOT NULL,
+address VARCHAR(20) NOT NULL,
+facebook VARCHAR(50),
+student_desc VARCHAR(200) NOT NULL,
+img_avatar LONGBLOB,
+sgs_id INT);
+
+ALTER TABLE student ADD FOREIGN KEY (sgs_id) REFERENCES sgs(sgs_id);
+
+CREATE TABLE teacher(
+tea_id INT PRIMARY KEY NOT NULL,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+username VARCHAR(50) NOT NULL,
+email VARCHAR(75) NOT NULL,
+password VARCHAR(50) NOT NULL,
+contact_no VARCHAR(20) NOT NULL,
+facebook VARCHAR(50),
+address VARCHAR(50),
+consult_hours VARCHAR(50),
+consult_days VARCHAR(50),
+tea_desc VARCHAR(200) NOT NULL,
+img_avatar LONGBLOB,
+sgs_id INT);
+
+ALTER TABLE sgs ADD FOREIGN KEY (teacher_adviser) REFERENCES teacher(tea_id);
+
+CREATE TABLE admin(
+admin_id INT PRIMARY KEY NOT NULL,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+username VARCHAR(50) NOT NULL,
+email VARCHAR(75) NOT NULL,
+password VARCHAR(50) NOT NULL,
+contact_no VARCHAR(20) NOT NULL,
+job VARCHAR(50) NOT NULL,
+job_location VARCHAR(50),
+job_info VARCHAR(50),
+img_avatar LONGBLOB);
+
+CREATE TABLE subject(
+sub_id INT PRIMARY KEY NOT NULL,
+sub_name VARCHAR(30),
+sub_sem INT,
+sub_day VARCHAR(30),
+sub_day2 VARCHAR(30),
+sub_day3 VARCHAR(30),
+loc_id INT,
+sgs_id INT NULL,
+sgs_id2 INT NULL,
+sgs_id3 INT NULL,
+sgs_id4 INT NULL,
+tea_id INT
+);
+
+CREATE TABLE location(
+loc_id INT PRIMARY KEY NOT NULL,
+dep VARCHAR(30),
+room INT,
+room_desc VARCHAR(200)
+);
+
+INSERT INTO sgs('strand', 'grade', 'section') VALUES ('HUMSS', 12, 1);
+
+ALTER TABLE subject ADD FOREIGN KEY (tea_id) REFERENCES teacher(tea_id);
+
+ALTER TABLE subject ADD FOREIGN KEY (sgs_id) REFERENCES sgs(sgs_id);
+
+
+"SELECT * FROM message WHERE (send_tea=" + id + " AND rec_stud=" + userid + ") OR (send_stud=" + userid + " AND rec_tea=" + id + ")"
+
+"SELECT * FROM message WHERE (send_stud=" + id + " AND rec_admin=" + userid + ") OR (send_admin=" + userid + " AND rec_stud=" + id + ")"
+
+"SELECT * FROM message WHERE (send_admin=" + id + " AND rec_tea=" + userid + ") OR (send_tea=" + userid + " AND rec_admin=" + id + ")"
+
+

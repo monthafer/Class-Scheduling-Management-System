@@ -1,0 +1,543 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Add classpath:	lib\config.properties
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar;lib\config.properties" csms.login.Continue
+Args length:	295/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Add classpath:	lib\config.properties
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar;lib\config.properties" csms.login.Continue
+Args length:	295/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Add classpath:	lib\config.properties
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar;lib\config.properties" csms.login.Continue
+Args length:	295/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Add classpath:	lib\config.properties
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar;lib\config.properties" csms.login.Continue
+Args length:	295/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Add classpath:	lib\config.properties
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar;lib\config.properties" csms.login.Continue
+Args length:	295/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Add classpath:	lib\config.properties
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar;lib\config.properties" csms.login.Continue
+Args length:	295/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Add classpath:	lib\config.properties
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar;lib\config.properties" csms.login.Continue
+Args length:	295/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Main class:	csms.login.Continue
+Add classpath:	lib\TimingFramework-0.55.jar
+Add classpath:	lib\miglayout-4.0.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\gradient-icon-font.jar
+Add classpath:	lib\mysql-connector-j-8.0.32.jar
+Add classpath:	lib\jna-5.5.0.jar
+Add classpath:	lib\swing-jnafilechooser.jar
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS.exe;lib\TimingFramework-0.55.jar;lib\miglayout-4.0.jar;lib\AbsoluteLayout.jar;lib\gradient-icon-font.jar;lib\mysql-connector-j-8.0.32.jar;lib\jna-5.5.0.jar;lib\swing-jnafilechooser.jar" csms.login.Continue
+Args length:	273/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS final.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\msu-wone\Desktop\Molky's files\CSMS final\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.004.000
+Java max ver:	1.018.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-18\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\msu-wone\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-18\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (OK)
+Version string: 1.018.000 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe
+Launcher args:	-jar "C:\Users\msu-wone\Desktop\Molky's files\CSMS final\CSMS final.exe"
+Args length:	72/32768 chars
+Exit code:	0

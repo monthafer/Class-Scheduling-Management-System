@@ -1,0 +1,18 @@
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        dispose();
+        new main().setVisible(true);
+    }                                     
+
+    private void contActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        dispose();
+        if (pro.getPosition().equals("Student")) {
+            new csms.loadingscreen.mainload(null, true).setVisible(true);
+            new mainViewer().setVisible(true);
+        } else if (pro.getPosition().equals("Teacher")) {
+            new csms.loadingscreen.mainload(null, true).setVisible(true);
+            new mainFaculty().setVisible(true);
+        } else {
+            new csms.loadingscreen.mainload(null, true).setVisible(true);
+            new mainAdmin().setVisible(true);
+        }
+    }   

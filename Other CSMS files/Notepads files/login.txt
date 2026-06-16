@@ -1,0 +1,146 @@
+﻿import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class LoginRegisterForm extends JFrame implements ActionListener {
+    private JPanel panelLogin, panelRegister;
+    private CardLayout cardLayout;
+    private JTextField txtLoginUsername, txtLoginPassword, txtRegisterFirstName, txtRegisterLastName, txtRegisterEmail, txtRegisterUsername;
+    private JPasswordField txtLoginPasswordHidden, txtRegisterPassword, txtRegisterPasswordConfirm;
+    private JComboBox<String> cbRegisterPosition;
+
+    public LoginRegisterForm() {
+        super("Class Scheduling Management System");
+
+        // create the panels and set up the card layout
+        panelLogin = new JPanel(new GridLayout(3, 2, 10, 10));
+        panelRegister = new JPanel(new GridLayout(7, 2, 10, 10));
+        cardLayout = new CardLayout();
+        JPanel panelCard = new JPanel(cardLayout);
+        panelCard.add(panelLogin, "login");
+        panelCard.add(panelRegister, "register");
+
+        // add the logo
+        ImageIcon logo = new ImageIcon("logo.png");
+        JLabel lblLogo = new JLabel(logo);
+        lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
+        add(lblLogo, BorderLayout.NORTH);
+
+        // create the login page components
+        JLabel lblLoginUsername = new JLabel("Username:");
+        lblLoginUsername.setIcon(new ImageIcon("user.png"));
+        txtLoginUsername = new JTextField();
+        txtLoginUsername.setMargin(new Insets(2, 25, 2, 2));
+        txtLoginUsername.setOpaque(false);
+        txtLoginUsername.setBorder(BorderFactory.createCompoundBorder(txtLoginUsername.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+        JLabel lblLoginPassword = new JLabel("Password:");
+        lblLoginPassword.setIcon(new ImageIcon("lock.png"));
+        txtLoginPassword = new JPasswordField();
+        txtLoginPassword.setMargin(new Insets(2, 25, 2, 2));
+        txtLoginPassword.setOpaque(false);
+        txtLoginPassword.setBorder(BorderFactory.createCompoundBorder(txtLoginPassword.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+        txtLoginPasswordHidden = new JPasswordField();
+
+        // create the register page components
+        JLabel lblRegisterFirstName = new JLabel("First Name:");
+        lblRegisterFirstName.setIcon(new ImageIcon("user.png"));
+        txtRegisterFirstName = new JTextField();
+        txtRegisterFirstName.setMargin(new Insets(2, 25, 2, 2));
+        txtRegisterFirstName.setOpaque(false);
+        txtRegisterFirstName.setBorder(BorderFactory.createCompoundBorder(txtRegisterFirstName.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+        JLabel lblRegisterLastName = new JLabel("Last Name:");
+        lblRegisterLastName.setIcon(new ImageIcon("user.png"));
+        txtRegisterLastName = new JTextField();
+        txtRegisterLastName.setMargin(new Insets(2, 25, 2, 2));
+        txtRegisterLastName.setOpaque(false);
+        txtRegisterLastName.setBorder(BorderFactory.createCompoundBorder(txtRegisterLastName.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+        JLabel lblRegisterEmail = new JLabel("Institutional Email:");
+        lblRegisterEmail.setIcon(new ImageIcon("email.png"));
+        txtRegisterEmail = new JTextField();
+        txtRegisterEmail.setMargin(new Insets(2, 25, 2, 2));
+        txtRegisterEmail.setOpaque(false);
+        txtRegisterEmail.setBorder(BorderFactory.createCompoundBorder(txtRegisterEmail.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+        JLabel lblRegisterPosition = new JLabel("Position:");
+        lblRegisterPosition.setIcon(new ImageIcon("position.png"));
+    String[] positionOptions = {"Teacher", "Student", "Administrator"};
+    cbRegisterPosition = new JComboBox<>(positionOptions);
+    JLabel lblRegisterUsername = new JLabel("Username:");
+    lblRegisterUsername.setIcon(new ImageIcon("user.png"));
+    txtRegisterUsername = new JTextField();
+    txtRegisterUsername.setMargin(new Insets(2, 25, 2, 2));
+    txtRegisterUsername.setOpaque(false);
+    txtRegisterUsername.setBorder(BorderFactory.createCompoundBorder(txtRegisterUsername.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+    JLabel lblRegisterPassword = new JLabel("Password:");
+    lblRegisterPassword.setIcon(new ImageIcon("lock.png"));
+    txtRegisterPassword = new JPasswordField();
+    txtRegisterPassword.setMargin(new Insets(2, 25, 2, 2));
+    txtRegisterPassword.setOpaque(false);
+    txtRegisterPassword.setBorder(BorderFactory.createCompoundBorder(txtRegisterPassword.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+    JLabel lblRegisterPasswordConfirm = new JLabel("Confirm Password:");
+    lblRegisterPasswordConfirm.setIcon(new ImageIcon("lock.png"));
+    txtRegisterPasswordConfirm = new JPasswordField();
+    txtRegisterPasswordConfirm.setMargin(new Insets(2, 25, 2, 2));
+    txtRegisterPasswordConfirm.setOpaque(false);
+    txtRegisterPasswordConfirm.setBorder(BorderFactory.createCompoundBorder(txtRegisterPasswordConfirm.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 0)));
+
+    // add the components to the panels
+    panelLogin.add(lblLoginUsername);
+    panelLogin.add(txtLoginUsername);
+    panelLogin.add(lblLoginPassword);
+    panelLogin.add(txtLoginPassword);
+    panelLogin.add(new JLabel()); // filler
+    panelLogin.add(txtLoginPasswordHidden); // used to keep focus on the login form
+    panelRegister.add(lblRegisterFirstName);
+    panelRegister.add(txtRegisterFirstName);
+    panelRegister.add(lblRegisterLastName);
+    panelRegister.add(txtRegisterLastName);
+    panelRegister.add(lblRegisterEmail);
+    panelRegister.add(txtRegisterEmail);
+    panelRegister.add(lblRegisterPosition);
+    panelRegister.add(cbRegisterPosition);
+    panelRegister.add(lblRegisterUsername);
+    panelRegister.add(txtRegisterUsername);
+    panelRegister.add(lblRegisterPassword);
+    panelRegister.add(txtRegisterPassword);
+    panelRegister.add(lblRegisterPasswordConfirm);
+    panelRegister.add(txtRegisterPasswordConfirm);
+
+    // add the card layout panel to the frame
+    add(panelCard, BorderLayout.CENTER);
+
+    // add the login and register buttons
+    JButton btnLogin = new JButton("Login");
+    btnLogin.addActionListener(this);
+    JButton btnRegister = new JButton("Register");
+    btnRegister.addActionListener(this);
+    JPanel panelButtons = new JPanel(new GridLayout(1, 2, 10, 10));
+    panelButtons.add(btnLogin);
+    panelButtons.add(btnRegister);
+    add(panelButtons, BorderLayout.SOUTH);
+
+    // set up the frame
+    setSize(500, 400);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setLocationRelativeTo(null);
+    setResizable(false);
+    setVisible(true);
+}
+
+public void actionPerformed(ActionEvent e) {
+    if (e.getActionCommand().equals("Login")) {
+        // perform login authentication here
+        // for now, just switch to the register form
+        cardLayout.show(panelLogin.getParent(), "register");
+        txtRegisterFirstName.requestFocus();
+    } else if (e.getActionCommand().equals("Register")) {
+        // perform registration here
+        // for now, just switch to the login form
+        cardLayout.show(panelRegister.getParent(), "login");
+        txtLoginUsername.requestFocus();
+    }
+}
+
+public static void main(String[] args) {
+    new LoginRegisterForm();
+}
+

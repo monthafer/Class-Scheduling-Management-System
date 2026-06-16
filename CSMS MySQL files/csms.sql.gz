@@ -1,0 +1,407 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 14, 2023 at 08:48 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `csms`
+--
+CREATE DATABASE IF NOT EXISTS `csms` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `csms`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(75) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `contact_no` varchar(20) NOT NULL,
+  `fbAcc` varchar(50) DEFAULT NULL,
+  `bio` varchar(200) DEFAULT NULL,
+  `job` varchar(50) NOT NULL,
+  `job_location` varchar(50) DEFAULT NULL,
+  `job_info` varchar(200) DEFAULT NULL,
+  `img_avatar` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agenda`
+--
+
+CREATE TABLE `agenda` (
+  `agenda_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` text DEFAULT NULL,
+  `date` date NOT NULL,
+  `sgs_id` int(11) DEFAULT NULL,
+  `repeatable` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announce`
+--
+
+CREATE TABLE `announce` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `tea_id` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL,
+  `timecreated` date NOT NULL,
+  `description` varchar(1000) NOT NULL,
+  `sgs` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL,
+  `announce` int(11) NOT NULL,
+  `stud_id` int(11) DEFAULT NULL,
+  `tea_id` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL,
+  `comment` varchar(1000) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `location`
+--
+
+CREATE TABLE `location` (
+  `loc_id` int(11) NOT NULL,
+  `dep` varchar(30) DEFAULT NULL,
+  `room` int(11) DEFAULT NULL,
+  `room_desc` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `message_id` int(11) NOT NULL,
+  `send_stud` int(11) DEFAULT NULL,
+  `send_tea` int(11) DEFAULT NULL,
+  `send_admin` int(11) DEFAULT NULL,
+  `rec_stud` int(11) DEFAULT NULL,
+  `rec_tea` int(11) DEFAULT NULL,
+  `rec_admin` int(11) DEFAULT NULL,
+  `message` text NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sgs`
+--
+
+CREATE TABLE `sgs` (
+  `sgs_id` int(11) NOT NULL,
+  `strand` varchar(30) DEFAULT NULL,
+  `grade` int(11) DEFAULT NULL,
+  `section` varchar(30) DEFAULT NULL,
+  `teacher_adviser` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `stud_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(75) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `contact_no` varchar(20) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `facebook` varchar(50) DEFAULT NULL,
+  `student_desc` varchar(200) NOT NULL,
+  `img_avatar` longblob DEFAULT NULL,
+  `sgs_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subject`
+--
+
+CREATE TABLE `subject` (
+  `sub_id` int(11) NOT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `sem` int(11) DEFAULT NULL,
+  `desc` varchar(500) DEFAULT NULL,
+  `day1` varchar(30) DEFAULT NULL,
+  `day2` varchar(30) DEFAULT NULL,
+  `hour1` int(11) DEFAULT NULL,
+  `min1` int(11) DEFAULT NULL,
+  `hour2` int(11) DEFAULT NULL,
+  `min2` int(11) DEFAULT NULL,
+  `loc_id` int(11) DEFAULT NULL,
+  `sgs_id` int(11) DEFAULT NULL,
+  `tea_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher`
+--
+
+CREATE TABLE `teacher` (
+  `tea_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(75) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `contact_no` varchar(20) NOT NULL,
+  `facebook` varchar(50) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `consult_hours` varchar(50) DEFAULT NULL,
+  `consult_days` varchar(50) DEFAULT NULL,
+  `tea_desc` varchar(200) NOT NULL,
+  `img_avatar` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `agenda`
+--
+ALTER TABLE `agenda`
+  ADD PRIMARY KEY (`agenda_id`),
+  ADD KEY `sgs_id` (`sgs_id`);
+
+--
+-- Indexes for table `announce`
+--
+ALTER TABLE `announce`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sgsid` (`sgs`),
+  ADD KEY `iid` (`tea_id`),
+  ADD KEY `iiid` (`admin_id`);
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `stud_id` (`stud_id`),
+  ADD KEY `tea_id` (`tea_id`),
+  ADD KEY `admin_id` (`admin_id`),
+  ADD KEY `announce` (`announce`);
+
+--
+-- Indexes for table `location`
+--
+ALTER TABLE `location`
+  ADD PRIMARY KEY (`loc_id`);
+
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`message_id`),
+  ADD KEY `message_ibfk_1` (`send_admin`),
+  ADD KEY `rec_stud` (`rec_stud`),
+  ADD KEY `send_stud` (`send_stud`),
+  ADD KEY `rec_tea` (`rec_tea`),
+  ADD KEY `send_tea` (`send_tea`),
+  ADD KEY `rec_admin` (`rec_admin`);
+
+--
+-- Indexes for table `sgs`
+--
+ALTER TABLE `sgs`
+  ADD PRIMARY KEY (`sgs_id`),
+  ADD KEY `teacher_adviser` (`teacher_adviser`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`stud_id`),
+  ADD KEY `sgs_id` (`sgs_id`);
+
+--
+-- Indexes for table `subject`
+--
+ALTER TABLE `subject`
+  ADD PRIMARY KEY (`sub_id`),
+  ADD KEY `tea_id` (`tea_id`),
+  ADD KEY `sgs_id` (`sgs_id`),
+  ADD KEY `loc_id` (`loc_id`);
+
+--
+-- Indexes for table `teacher`
+--
+ALTER TABLE `teacher`
+  ADD PRIMARY KEY (`tea_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `agenda`
+--
+ALTER TABLE `agenda`
+  MODIFY `agenda_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `announce`
+--
+ALTER TABLE `announce`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `location`
+--
+ALTER TABLE `location`
+  MODIFY `loc_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `stud_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subject`
+--
+ALTER TABLE `subject`
+  MODIFY `sub_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `teacher`
+--
+ALTER TABLE `teacher`
+  MODIFY `tea_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `agenda`
+--
+ALTER TABLE `agenda`
+  ADD CONSTRAINT `agenda_ibfk_1` FOREIGN KEY (`sgs_id`) REFERENCES `sgs` (`sgs_id`);
+
+--
+-- Constraints for table `announce`
+--
+ALTER TABLE `announce`
+  ADD CONSTRAINT `iid` FOREIGN KEY (`tea_id`) REFERENCES `teacher` (`tea_id`),
+  ADD CONSTRAINT `iiid` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`admin_id`),
+  ADD CONSTRAINT `sgsid` FOREIGN KEY (`sgs`) REFERENCES `sgs` (`sgs_id`);
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`stud_id`) REFERENCES `student` (`stud_id`),
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`tea_id`) REFERENCES `teacher` (`tea_id`),
+  ADD CONSTRAINT `comment_ibfk_3` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`admin_id`),
+  ADD CONSTRAINT `comment_ibfk_4` FOREIGN KEY (`announce`) REFERENCES `announce` (`id`);
+
+--
+-- Constraints for table `message`
+--
+ALTER TABLE `message`
+  ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`send_admin`) REFERENCES `admin` (`admin_id`),
+  ADD CONSTRAINT `message_ibfk_2` FOREIGN KEY (`rec_stud`) REFERENCES `student` (`stud_id`),
+  ADD CONSTRAINT `message_ibfk_3` FOREIGN KEY (`send_stud`) REFERENCES `student` (`stud_id`),
+  ADD CONSTRAINT `message_ibfk_4` FOREIGN KEY (`rec_tea`) REFERENCES `teacher` (`tea_id`),
+  ADD CONSTRAINT `message_ibfk_5` FOREIGN KEY (`send_tea`) REFERENCES `teacher` (`tea_id`),
+  ADD CONSTRAINT `message_ibfk_6` FOREIGN KEY (`rec_admin`) REFERENCES `admin` (`admin_id`);
+
+--
+-- Constraints for table `sgs`
+--
+ALTER TABLE `sgs`
+  ADD CONSTRAINT `sgs_ibfk_1` FOREIGN KEY (`teacher_adviser`) REFERENCES `teacher` (`tea_id`);
+
+--
+-- Constraints for table `student`
+--
+ALTER TABLE `student`
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`sgs_id`) REFERENCES `sgs` (`sgs_id`);
+
+--
+-- Constraints for table `subject`
+--
+ALTER TABLE `subject`
+  ADD CONSTRAINT `subject_ibfk_1` FOREIGN KEY (`tea_id`) REFERENCES `teacher` (`tea_id`),
+  ADD CONSTRAINT `subject_ibfk_2` FOREIGN KEY (`sgs_id`) REFERENCES `sgs` (`sgs_id`),
+  ADD CONSTRAINT `subject_ibfk_3` FOREIGN KEY (`loc_id`) REFERENCES `location` (`loc_id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

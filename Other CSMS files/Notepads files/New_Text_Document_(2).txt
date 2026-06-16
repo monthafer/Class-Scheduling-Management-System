@@ -1,0 +1,209 @@
+package csms.loadingscreen;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
+public class mainload extends javax.swing.JFrame {
+    static int fadeinone = 0;
+    static Timer fadeinonetimer; //txtline
+    static int fadeintwo = 0;
+    static Timer fadeintwotimer; //firstline and secondline
+    static int fadeout = 250; //fadeout
+    static Timer fadeouttimer;
+    static int delay = 0;
+    static Timer delaytimer;
+    static int delay2 = 0;
+    static Timer delaytimer2;
+    static int a;
+
+    public mainload() {
+        initComponents();
+        setBackground(new Color(0,0,0,0));
+        bg.setBackground(new Color(0,0,0,0));
+        txtline.setForeground(new Color(0,0,0,0));
+        firstline.setForeground(new Color(0,0,0,0));
+        secondline.setForeground(new Color(0,0,0,0));
+        fadeinanim2();
+    }
+    private void initComponents() {
+        bg = new javax.swing.JPanel();
+        txtline = new javax.swing.JLabel();
+        secondline = new javax.swing.JLabel();
+        firstline = new javax.swing.JLabel();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        txtline.setBackground(new java.awt.Color(0, 0, 0));
+        txtline.setFont(new java.awt.Font("Bradley Hand ITC", 1, 12));
+        txtline.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtline.setText(" ");
+        bg.add(txtline, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 280, 20));
+        secondline.setBackground(new java.awt.Color(0, 0, 0));
+        secondline.setFont(new java.awt.Font("Bradley Hand ITC", 1, 12));
+        secondline.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        secondline.setText("my brain's not loading...");
+        bg.add(secondline, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 280, 20));
+        firstline.setBackground(new java.awt.Color(0, 0, 0));
+        firstline.setFont(new java.awt.Font("Bradley Hand ITC", 1, 12));
+        firstline.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        firstline.setText("I wish I had a refresh button for myself for when");
+        bg.add(firstline, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 280, 20));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        pack();
+        setLocationRelativeTo(null);
+    }                     
+    public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(mainload.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(mainload.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(mainload.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(mainload.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new mainload().setVisible(true);
+            }
+        });
+    }
+    private javax.swing.JPanel bg;
+    private javax.swing.JLabel csms;
+    private javax.swing.JLabel csms1;
+    private javax.swing.JLabel firstline;
+    private javax.swing.JLabel loadbg;
+    private javax.swing.JLabel loadimage;
+    private csms.loadingscreen.progressbar progressbar1;
+    private javax.swing.JLabel secondline;
+    private javax.swing.JLabel txtline;              
+
+    private void fadeinanim1(){
+        fadeinonetimer = new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                txtline.setForeground(new Color(0,0,0,fadeinone++));
+                if (fadeinone>250){
+                    fadeinone = 255;
+                    fadeinonetimer.stop();
+                    delayanimin();
+                }
+            }
+        });
+        fadeinonetimer.setRepeats(true);
+        fadeinonetimer.start();
+    }
+    
+    private void fadeinanim2(){
+        fadeintwotimer = new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                firstline.setForeground(new Color(0,0,0,fadeintwo++));
+                secondline.setForeground(new Color(0,0,0,fadeintwo++));
+                if (fadeintwo>250){
+                    fadeintwo = 255;
+                    fadeintwotimer.stop();
+                    delayanimin();
+                }
+            }
+        });
+        fadeintwotimer.setRepeats(true);
+        fadeintwotimer.start();
+    }
+    
+    private void fadeoutanim(){
+        fadeouttimer = new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Color fadeintwocol2 = new Color(0,0,0,fadeout--);
+                firstline.setForeground(fadeintwocol2);
+                secondline.setForeground(fadeintwocol2);
+                txtline.setForeground(fadeintwocol2);
+                if (fadeout<5){
+                    fadeout = 0;
+                    fadeouttimer.stop();
+                    delayanimout();
+                }
+            }
+        });
+        fadeouttimer.setRepeats(true);
+        fadeouttimer.start();
+    }
+    
+    private void delayanimin(){
+        delaytimer = new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                delay++;
+                if (delay==50){
+                    delaytimer.stop();
+                    fadeoutanim();
+                }
+            }
+        });
+        delaytimer.setRepeats(true);
+        delaytimer.start();
+    }
+    
+    private void delayanimout(){
+        delaytimer2 = new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                delay2++;
+                if (delay2==50){
+                    delaytimer2.stop();
+                    a = (int)(Math.random()*(4-1+1)+1);
+                    randomtxt();
+                }
+            }
+        });
+        delaytimer2.setRepeats(true);
+        delaytimer2.start();
+        
+    }
+    
+    private void randomtxt(){
+        switch (a) {
+            case 1:
+                txtline.setText("Sending Virtual Hug...");
+                fadeinanim1();
+                break;
+            case 2:
+                firstline.setText("Did you know that some texts appear here in a");
+                secondline.setText("randomly way?");
+                fadeinanim2();
+                break;
+            case 3:
+                firstline.setText("I wish I had a refresh button for myself for when");
+                secondline.setText("my brain's not loading...");
+                fadeinanim2();
+                break;
+            case 4:
+                firstline.setText("CSMS stands for 'Class Scheduling Management");
+                secondline.setText("System'");
+                fadeinanim2();
+                break;
+            default:
+                break;
+        }
+    }
+}

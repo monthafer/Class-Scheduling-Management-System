@@ -1,0 +1,367 @@
+/*
+            ResultSet rst = stm.executeQuery("SELECT * FROM message WHERE send_tea=" + id + " OR rec_tea=" + id);
+            while (rst.next()){
+                String check = String.valueOf(rst.getInt("send_tea"));
+                String check2 = String.valueOf(rst.getInt("rec_tea"));
+                Statement stm1 = dbconn.createStatement();
+                if(check.equals(id)){
+                    if (userPosition.equals("Student")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_tea=" + id + " AND rec_stud=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Teacher")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_tea=" + id + " AND rec_tea=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Administrator")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_tea=" + id + " AND rec_admin=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    }
+                } else if(check2.equals(id)){
+                    if (userPosition.equals("Student")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_stud=" + userid + " AND rec_tea=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Teacher")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_tea=" + userid + " AND rec_tea=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Administrator")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_admin=" + userid + " AND rec_tea=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    }
+                }
+                stm1.close();
+            }
+            rst.close();*/
+
+
+
+
+ResultSet rst = stm.executeQuery("SELECT * FROM message WHERE send_stud=" + id + " OR rec_stud=" + id);
+            while (rst.next()){
+                String check = String.valueOf(rst.getInt("send_stud"));
+                String check2 = String.valueOf(rst.getInt("rec_stud"));
+                Statement stm1 = dbconn.createStatement();
+                if(check.equals(id)){
+                    if (userPosition.equals("Student")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_stud=" + id + " AND rec_stud=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Teacher")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_stud=" + id + " AND rec_tea=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Administrator")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_stud=" + id + " AND rec_admin=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    }
+                } else if(check2.equals(id)){
+                    if (userPosition.equals("Student")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_stud=" + userid + " AND rec_stud=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Teacher")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_tea=" + userid + " AND rec_stud=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Administrator")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_admin=" + userid + " AND rec_stud=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    }
+                }
+                stm1.close();
+            }
+            rst.close();
+
+
+
+
+
+
+ResultSet rst = stm.executeQuery("SELECT * FROM message WHERE send_admin=" + id + " OR rec_admin=" + id);
+            while (rst.next()){
+                String check = String.valueOf(rst.getInt("send_admin"));
+                String check2 = String.valueOf(rst.getInt("rec_admin"));
+                Statement stm1 = dbconn.createStatement();
+                if(check.equals(id)){
+                    if (userPosition.equals("Student")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_admin=" + id + " AND rec_stud=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Teacher")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_admin=" + id + " AND rec_tea=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Administrator")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_admin=" + id + " AND rec_admin=" + userid);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(format, firstname, datetime, mes), ChatBox.BoxType.LEFT);
+                        }
+                        rst1.close();
+                    }
+                } else if(check2.equals(id)){
+                    if (userPosition.equals("Student")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_stud=" + userid + " AND rec_admin=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Teacher")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_tea=" + userid + " AND rec_admin=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    } else if (userPosition.equals("Administrator")){
+                        ResultSet rst1 = stm1.executeQuery("SELECT * FROM message WHERE send_admin=" + userid + " AND rec_admin=" + id);
+                        if (rst1.next()) {
+                            String mes = rst1.getString("message");
+                            String datetime = df.format(rst1.getTimestamp("time"));
+                            chatArea.addChatBox(new ModelMessage(userAvatar, username, datetime, mes), ChatBox.BoxType.RIGHT);
+                        }
+                        rst1.close();
+                    }
+                }
+                stm1.close();
+            }
+            rst.close();
+
+
+
+
+
+
+Can you clean and remove the redundancy in this code?
+String search = searchBar.getText().trim();
+try{
+Statement stmt = dbconn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT * FROM teacher WHERE first_name LIKE '%" + search + "%' OR last_name LIKE '%" + search + "%'");
+                while (rs.next()) {
+                    String name = rs.getString("first_name") + " " + rs.getString("last_name");
+                    String firstname = rs.getString("first_name");
+                    String id1 = String.valueOf(rs.getInt("tea_id"));
+                    byte[] imagedata = rs.getBytes("img_avatar");
+                    ImageIcon format;
+                    if (imagedata != null) {
+                        format = new ImageIcon(imagedata);
+                    } else {
+                        format = new ImageIcon(getClass().getResource("/csms/database/icon/avatarimg.png"));
+                    }
+                    nameOnPanel namepanel = new nameOnPanel();
+                    namepanel.avatar.setImage(format);
+                    namepanel.namefull.setText(name);
+                    namepanel.positionfull.setText("Teacher");
+                    namepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                            chatArea.clearChatBox();
+                            chatArea.setTitle(name);
+                            position = "Teacher";
+                            id = id1;
+                            chatHistoryTeacher(firstname, format);
+                        }
+                    });
+                    namePanel.add(namepanel);
+                }
+                rs.close();
+                ResultSet rs1 = stmt.executeQuery("SELECT * FROM student WHERE first_name LIKE '%" + search + "%' OR last_name LIKE '%" + search + "%'");
+                while (rs1.next()) {
+                    String name = rs1.getString("first_name") + " " + rs1.getString("last_name");
+                    String id1 = String.valueOf(rs1.getInt("stud_id"));
+                    String firstname = rs1.getString("first_name");
+                    byte[] imagedata = rs1.getBytes("img_avatar");
+                    ImageIcon format;
+                    if (imagedata != null) {
+                        format = new ImageIcon(imagedata);
+                    } else {
+                        format = new ImageIcon(getClass().getResource("/csms/database/icon/avatarimg.png"));
+                    }
+                    nameOnPanel namepanel = new nameOnPanel();
+                    namepanel.avatar.setImage(format);
+                    namepanel.namefull.setText(name);
+                    namepanel.positionfull.setText("Student");
+                    namepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                            chatArea.clearChatBox();
+                            chatArea.setTitle(name);
+                            position = "Student";
+                            id = id1;
+                            chatHistoryStudent(firstname, format);
+                        }
+                    });
+                    namePanel.add(namepanel);
+                }
+                rs1.close();
+                ResultSet rs2 = stmt.executeQuery("SELECT * FROM admin WHERE first_name LIKE '%" + search + "%' OR last_name LIKE '%" + search + "%'");
+                while (rs2.next()) {
+                    String name = rs2.getString("first_name") + " " + rs2.getString("last_name");
+                    String id1 = rs2.getString("admin_id");
+                    String firstname = rs2.getString("first_name");
+                    byte[] imagedata = rs2.getBytes("img_avatar");
+                    ImageIcon format;
+                    if (imagedata != null) {
+                        format = new ImageIcon(imagedata);
+                    } else {
+                        format = new ImageIcon(getClass().getResource("/csms/database/icon/avatarimg.png"));
+                    }
+                    nameOnPanel namepanel = new nameOnPanel();
+                    namepanel.avatar.setImage(format);
+                    namepanel.namefull.setText(name);
+                    namepanel.positionfull.setText("Administrator");
+                    namepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                            chatArea.clearChatBox();
+                            chatArea.setTitle(name);
+                            position = "Administrator";
+                            id = id1;
+                            chatHistoryAdmin(firstname, format);
+                        }
+                    });
+                    namePanel.add(namepanel);
+                }
+                rs2.close();
+                stmt.close();
+} catch (SQLException ex) {
+            Logger.getLogger(Message_Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+String search = searchBar.getText().trim();
+
+try {
+    Statement stmt = dbconn.createStatement();
+
+    String teacherQuery = "SELECT * FROM teacher WHERE first_name LIKE '%" + search + "%' OR last_name LIKE '%" + search + "%'";
+    String studentQuery = "SELECT * FROM student WHERE first_name LIKE '%" + search + "%' OR last_name LIKE '%" + search + "%'";
+    String adminQuery = "SELECT * FROM admin WHERE first_name LIKE '%" + search + "%' OR last_name LIKE '%" + search + "%'";
+
+    ResultSet rs = stmt.executeQuery(teacherQuery);
+    while (rs.next()) {
+        addNameOnPanel(rs, "Teacher");
+    }
+    rs.close();
+
+    rs = stmt.executeQuery(studentQuery);
+    while (rs.next()) {
+        addNameOnPanel(rs, "Student");
+    }
+    rs.close();
+
+    rs = stmt.executeQuery(adminQuery);
+    while (rs.next()) {
+        addNameOnPanel(rs, "Administrator");
+    }
+    rs.close();
+
+    stmt.close();
+
+} catch (SQLException ex) {
+    Logger.getLogger(Message_Form.class.getName()).log(Level.SEVERE, null, ex);
+}
+
+private void addNameOnPanel(ResultSet rs, String position) throws SQLException {
+    String name = rs.getString("first_name") + " " + rs.getString("last_name");
+    String firstname = rs.getString("first_name");
+    String id1 = null;
+    if (position.equals("Administrator")) {
+        id1 = rs.getString("admin_id");
+    } else {
+        id1 = String.valueOf(rs.getInt(position.toLowerCase() + "_id"));
+    }
+
+    byte[] imagedata = rs.getBytes("img_avatar");
+    ImageIcon format;
+    if (imagedata != null) {
+        format = new ImageIcon(imagedata);
+    } else {
+        format = new ImageIcon(getClass().getResource("/csms/database/icon/avatarimg.png"));
+    }
+
+    nameOnPanel namepanel = new nameOnPanel();
+    namepanel.avatar.setImage(format);
+    namepanel.namefull.setText(name);
+    namepanel.positionfull.setText(position);
+    namepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            chatArea.clearChatBox();
+            chatArea.setTitle(name);
+            position = position;
+            id = id1;
+            if (position.equals("Teacher")) {
+                chatHistoryTeacher(firstname, format);
+            } else if (position.equals("Student")) {
+                chatHistoryStudent(firstname, format);
+            } else {
+                chatHistoryAdmin(firstname, format);
+            }
+        }
+    });
+
+    namePanel.add(namepanel);
+}

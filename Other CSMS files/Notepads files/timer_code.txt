@@ -1,0 +1,245 @@
+﻿import javax.swing.*;
+import java.awt.*;
+
+public class SubjectFrame extends JFrame {
+
+    private JLabel subjectTitleLabel;
+    private JLabel timerLabel;
+    private JLabel subjectTeacherLabel;
+    private JLabel subjectClassTimeLabel;
+    private JLabel subjectClassDaysLabel;
+    private JLabel subjectClassLocationLabel;
+    private JLabel subjectDescriptionLabel;
+
+    public SubjectFrame() {
+        super("Subject Details");
+        setSize(500, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // create the labels
+        subjectTitleLabel = new JLabel();
+        timerLabel = new JLabel();
+        subjectTeacherLabel = new JLabel();
+        subjectClassTimeLabel = new JLabel();
+        subjectClassDaysLabel = new JLabel();
+        subjectClassLocationLabel = new JLabel();
+        subjectDescriptionLabel = new JLabel();
+
+        // set the layout of the frame
+        setLayout(new GridLayout(7, 1));
+
+        // add the labels to the frame
+        add(subjectTitleLabel);
+        add(timerLabel);
+        add(subjectTeacherLabel);
+        add(subjectClassTimeLabel);
+        add(subjectClassDaysLabel);
+        add(subjectClassLocationLabel);
+        add(subjectDescriptionLabel);
+    }
+
+    public void updateSubjectDetails(String subjectName, String endingTime, String nextSubjectName) {
+        subjectTitleLabel.setText(subjectName + " will end on " + endingTime + " and the next subject will be " + nextSubjectName);
+    }
+
+    public void updateTimer(int minutes, int seconds) {
+        String time = String.format("%02d:%02d", minutes, seconds);
+        timerLabel.setText(time);
+        timerLabel.setFont(new Font("Arial", Font.PLAIN, 48));
+        timerLabel.setHorizontalAlignment(JLabel.CENTER);
+    }
+
+    public void setSubjectTeacher(String teacherName) {
+        subjectTeacherLabel.setText("Teacher: " + teacherName);
+    }
+
+    public void setSubjectClassTime(String startTime, String endTime) {
+        subjectClassTimeLabel.setText("Class Time: " + startTime + " - " + endTime);
+    }
+
+    public void setSubjectClassDays(String days) {
+        subjectClassDaysLabel.setText("Class Days: " + days);
+    }
+
+    public void setSubjectClassLocation(String location) {
+        subjectClassLocationLabel.setText("Class Location: " + location);
+    }
+
+    public void setSubjectDescription(String description) {
+        subjectDescriptionLabel.setText("Description: " + description);
+    }
+
+}
+
+
+
+
+
+
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // create the subject frame
+        SubjectFrame subjectFrame = new SubjectFrame();
+
+        // set the initial subject details
+        subjectFrame.setSubjectTeacher("John Doe");
+        subjectFrame.setSubjectClassTime("10:00 AM", "11:30 AM");
+        subjectFrame.setSubjectClassDays("MWF");
+        subjectFrame.setSubjectClassLocation("Room 101");
+        subjectFrame.setSubjectDescription("This is a sample subject.");
+
+        // get the current time and calculate the next class start time
+        long currentTimeMillis = System.currentTimeMillis();
+        long nextClassStartTimeMillis = getNextClassStartTimeMillis(currentTimeMillis);
+
+        // create a timer to update the subject details and timer
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                // get the current time
+                long currentTimeMillis = System.currentTimeMillis();
+
+                // check if there is a subject class ongoing
+                if (isSubjectClassOngoing(currentTimeMillis)) {
+                    // calculate the remaining time and update the timer
+                    int remainingTimeSeconds = getRemainingTimeSeconds(currentTimeMillis);
+                    int remainingTimeMinutes = remainingTimeSeconds / 60;
+                    remainingTimeSeconds %= 60;
+                    subjectFrame.updateTimer(remainingTimeMinutes, remainingTimeSeconds);
+                } else {
+                    // get the next class start time and calculate the countdown time
+                    long nextClassStartTimeMillis = getNextClassStartTimeMillis(currentTimeMillis);
+                    int countdownSeconds = getCountdownSeconds(nextClassStartTimeMillis, currentTimeMillis);
+
+                    // update the timer
+                    int countdownMinutes = countdownSeconds / 60;
+                    countdownSeconds %= 60;
+                    subjectFrame.updateTimer(countdownMinutes, countdownSeconds);
+
+                    // get the next subject details
+                    String nextSubjectName = getNextSubjectName(nextClassStartTimeMillis);
+                    String endingTime = getEndingTime(currentTimeMillis, nextClassStartTimeMillis);
+                    String subjectName = getSubjectName(currentTimeMillis);
+
+                    // update the subject details
+                    subjectFrame.updateSubjectDetails(subjectName, endingTime, nextSubjectName);
+                }
+            }
+        }, 0, 1000); // update the timer every second
+    }
+
+    private static boolean isSubjectClassOngoing(long currentTimeMillis) {
+        // check if the current time is within the class time of the current subject
+        // you can get the class time of the current subject from the database
+        // return true if the current time is within the class time, false otherwise
+    }
+
+    private static int getRemainingTimeSeconds(long currentTimeMillis) {
+        // calculate the remaining time in seconds until the current subject ends
+        // you can get the end time of the current subject from the database
+        // subtract the current time from the end time to get the remaining time
+        // return the remaining time in seconds
+    }
+
+    private static long getNextClassStartTimeMillis(long currentTimeMillis) {
+        // get the next class start time from the database
+        // you can get the next class start time by querying the database
+        // return the next class start time in milliseconds
+    }
+
+    private static int getCountdownSeconds(long nextClassStartTimeMillis, long currentTimeMillis) {
+        // calculate the countdown time in seconds until the next subject starts
+        // subtract the current time from the next class start time to get the countdown time
+        // return the countdown time in seconds
+    }
+
+    private static String getNextSubjectName(long nextClassStartTimeMillis) {
+        // get the name of the next subject from the database
+}
+
+private static String getEndingTime(long currentTimeMillis, long nextClassStartTimeMillis) {
+    // calculate the ending time of the current subject
+    // you can get the class time of the current subject from the database
+    // add the class duration to the current time to get the ending time
+    // format the ending time as a string in your desired format
+    // for example: "11:30 AM"
+    return "";
+}
+
+private static String getSubjectName(long currentTimeMillis) {
+    // get the name of the current subject from the database
+    // you can get the current subject by querying the database
+    // return the name of the current subject
+}
+
+
+
+private static boolean isSubjectClassOngoing(long currentTimeMillis) {
+    try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+         PreparedStatement stmt = conn.prepareStatement("SELECT start_hour, start_minute, end_hour, end_minute FROM subject WHERE ...")) {
+        
+        // Set any necessary parameters on the PreparedStatement object
+        // ...
+
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            int startHour = rs.getInt("start_hour");
+            int startMinute = rs.getInt("start_minute");
+            int endHour = rs.getInt("end_hour");
+            int endMinute = rs.getInt("end_minute");
+
+            // Convert start and end times to milliseconds since epoch
+            long startMillis = LocalTime.of(startHour, startMinute).toEpochSecond(LocalDate.now(), ZoneOffset.UTC) * 1000;
+            long endMillis = LocalTime.of(endHour, endMinute).toEpochSecond(LocalDate.now(), ZoneOffset.UTC) * 1000;
+
+            return startMillis <= currentTimeMillis && currentTimeMillis <= endMillis;
+        } else {
+            return false; // No subject class currently scheduled
+        }
+    } catch (SQLException e) {
+        // Handle any exceptions that occur
+        e.printStackTrace();
+        return false;
+    }
+}
+
+
+
+private static String getNextSubjectName() {
+    try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+         PreparedStatement stmt = conn.prepareStatement("SELECT name, start_hour, start_minute FROM subject WHERE start_hour > ? OR (start_hour = ? AND start_minute > ?) ORDER BY start_hour, start_minute LIMIT 1")) {
+
+        // Get the current time
+        LocalTime currentTime = LocalTime.now();
+
+        // Set parameters on the PreparedStatement object
+        stmt.setInt(1, currentTime.getHour());
+        stmt.setInt(2, currentTime.getHour());
+        stmt.setInt(3, currentTime.getMinute());
+
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            String nextSubjectName = rs.getString("name");
+            int startHour = rs.getInt("start_hour");
+            int startMinute = rs.getInt("start_minute");
+
+            // Format the start time of the next subject
+            LocalTime startTime = LocalTime.of(startHour, startMinute);
+            String startTimeStr = startTime.format(DateTimeFormatter.ofPattern("hh:mm a"));
+
+            return nextSubjectName + " at " + startTimeStr;
+        } else {
+            return ""; // No subject class scheduled after the current one
+        }
+    } catch (SQLException e) {
+        // Handle any exceptions that occur
+        e.printStackTrace();
+        return "";
+    }
+}

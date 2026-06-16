@@ -1,0 +1,183 @@
+﻿import javax.swing.*;
+import java.awt.*;
+import java.sql.*;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class ClassSchedule extends JFrame {
+    private JLabel subjectTitleLabel, timerLabel, teacherLabel, classTimeLabel, classDaysLabel, locationLabel, descriptionLabel;
+    private int currentSubjectId = -1;
+    private String currentSubjectName = "";
+    private LocalDateTime currentSubjectEndTime;
+
+    public ClassSchedule() {
+        super("Class Schedule");
+
+        subjectTitleLabel = new JLabel();
+        subjectTitleLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        subjectTitleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        timerLabel = new JLabel();
+        timerLabel.setFont(new Font("Arial", Font.BOLD, 50));
+        timerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        teacherLabel = new JLabel();
+        classTimeLabel = new JLabel();
+        classDaysLabel = new JLabel();
+        locationLabel = new JLabel();
+        descriptionLabel = new JLabel();
+
+        JPanel panel = new JPanel(new GridLayout(7, 1));
+        panel.add(subjectTitleLabel);
+        panel.add(timerLabel);
+        panel.add(teacherLabel);
+        panel.add(classTimeLabel);
+        panel.add(classDaysLabel);
+        panel.add(locationLabel);
+        panel.add(descriptionLabel);
+        add(panel);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+
+        updateSchedule();
+        startCountdown();
+    }
+
+    private void updateSchedule() {
+        try {
+            // Connect to the database
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "user", "password");
+
+            // Get the current time
+            LocalDateTime currentTime = LocalDateTime.now();
+
+            // Find the next subject from the database
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM subjects WHERE day1 = ? AND hour_start >= ? AND minute_start >= ? ORDER BY hour_start, minute_start LIMIT 1");
+            stmt.setString(1, currentTime.getDayOfWeek().name());
+            stmt.setInt(2, currentTime.getHour());
+            stmt.setInt(3, currentTime.getMinute());
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                int subjectId = rs.getInt("id");
+                String subjectName = rs.getString("name");
+                int hourStart = rs.getInt("hour_start");
+                int minuteStart = rs.getInt("minute_start");
+                int hourEnd = rs.getInt("hour_end");
+                int minuteEnd = rs.getInt("minute_end");
+                String teacherName = rs.getString("teacher_name");
+                String locationName = rs.getString("location_name");
+                String description = rs.getString("description");
+
+                LocalDateTime subjectStartTime = LocalDateTime.of(currentTime.toLocalDate(), LocalTime.of(hourStart, minuteStart));
+                LocalDateTime subjectEndTime = LocalDateTime.of(currentTime.toLocalDate(), LocalTime.of(hourEnd, minuteEnd));
+
+                // Update the labels
+                subjectTitleLabel.setText(subjectName);
+                teacherLabel.setText("Teacher: " + teacherName);
+                classTimeLabel.setText("Class time: " + formatTime(hourStart, minuteStart) + " - " + formatTime(hourEnd, minuteEnd));
+                classDaysLabel.setText("Class days: " + rs.getString("day1") + (rs.getString("day2") != null ? ", " + rs.getString("day2") : ""));
+                locationLabel.setText("Location: " + locationName);
+                descriptionLabel.setText("Description: " + description);
+
+                if (currentSubjectId != subjectId) {
+                    currentSubjectId = subjectId;
+                    currentSubjectName = subjectName;
+                    currentSubjectEndTime = subjectEndTime;
+                    // Reset the timer
+                    timerLabel.setText(formatDuration(Duration.between(currentTime, subjectStartTime)));
+                }
+
+                // Update the window title
+                setTitle("Class Schedule - " + subjectName);
+
+            } else {
+                // No subjects are scheduled at this time
+                subjectTitleLabel.setText("No class right now");
+                teacherLabel.setText("");
+                classTimeLabel.setText("");
+                classDaysLabel.setText("");
+                locationLabel.setText("");
+                descriptionLabel.setText("");
+
+                // Find the next subject from the database
+                stmt = conn.prepareStatement("SELECT * FROM subjects WHERE day1 = ? AND hour_start > ? OR (day2 = ? AND hour_start >= ? AND minute_start >= ?) ORDER BY hour_start, minute_start LIMIT 1");
+                stmt.setString(1, currentTime.getDayOfWeek().name());
+                stmt.setInt(2, currentTime.getHour());
+                stmt.setString(3, currentTime.getDayOfWeek().name());
+                stmt.setInt(4, currentTime.getHour());
+                stmt.setInt(5, currentTime.getMinute());
+                rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    String nextSubjectName = rs.getString("name");
+                    int hourStart = rs.getInt("hour_start");
+                    int minuteStart = rs.getInt("minute_start");
+
+                    LocalDateTime nextSubjectStartTime = LocalDateTime.of(currentTime.toLocalDate(), LocalTime.of(hourStart, minuteStart));
+
+                    // Update the timer
+                    currentSubjectEndTime = nextSubjectStartTime;
+                    timerLabel.setText(formatDuration(Duration.between(currentTime, nextSubjectStartTime)));
+
+                    // Update the window title
+                    setTitle("Class Schedule - Next: " + nextSubjectName);
+
+                } else {
+                    // No subjects are scheduled today
+                    setTitle("Class Schedule - No classes today");
+                }
+            }
+
+            // Close the database connection
+            conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void startCountdown() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                LocalDateTime currentTime = LocalDateTime.now();
+
+                if (currentSubjectEndTime != null && currentTime.isAfter(currentSubjectEndTime)) {
+                    // The current subject has ended
+                    updateSchedule();
+
+                } else {
+                    // Update the timer
+                    timerLabel.setText(formatDuration(Duration.between(currentTime, currentSubjectEndTime)));
+                }
+            }
+        }, 0, 1000);
+    }
+
+    private String formatTime(int hour, int minute) {
+        return String.format("%02d:%02d", hour, minute);
+    }
+
+    private String formatDuration(Duration duration) {
+        long hours = duration.toHours();
+        long minutes = duration.toMinutes() % 60;
+        long seconds = duration.getSeconds() % 60;
+
+        if (hours > 0) {
+            return String.format("%d:%02d:%02d", hours, minutes, seconds);
+        } else {
+            return String.format("%02d:%02d", minutes, seconds);
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new ClassSchedule().setVisible(true));
+    }
+}
+
