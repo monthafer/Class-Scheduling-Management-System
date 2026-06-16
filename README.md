@@ -4,14 +4,14 @@ A Java Desktop (Swing) application designed for managing class schedules, strand
 
 ---
 
-## 🔒 Security & Data Sanitization Notice
+## Security & Data Sanitization Notice
 
 > [!IMPORTANT]
 > All original database data (including classmate names, email addresses, phone numbers, plain-text passwords, and chat logs) has been **fully removed and sanitized**. The repository now contains only **anonymous mock data** for testing and development purposes.
 
 ---
 
-## 🚀 How to Run the Project
+## How to Run the Project
 
 ### Prerequisites
 - **Java Development Kit (JDK) 8 or higher**
@@ -57,7 +57,7 @@ java -jar CSMS.jar
 
 ---
 
-## 🔑 Default Accounts
+## Default Accounts
 
 Use the following mock accounts to test different roles in the system:
 
@@ -69,7 +69,7 @@ Use the following mock accounts to test different roles in the system:
 
 ---
 
-## ⚙️ Configuration (`config.properties`)
+## Configuration (`config.properties`)
 
 The application database credentials are configurable. If you need to change the connection settings (e.g. if your local MySQL has a root password), edit the `CSMS/config.properties` file:
 
@@ -82,7 +82,7 @@ db_password=your_custom_password
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 - `CSMS/` - NetBeans Ant-based project source code, libraries, and resources.
 - `CSMS MySQL files/` - Folder containing reference `schema.sql` and `data.sql` scripts.
