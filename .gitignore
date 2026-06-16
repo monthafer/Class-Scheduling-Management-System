@@ -1,0 +1,17 @@
+# NetBeans project folders
+/CSMS/build/
+/CSMS/dist/
+/CSMS/nbproject/private/
+/CSMS/nbproject/Makefile-genesis.properties
+/CSMS/nbproject/Package-genesis.properties
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Log files
+*.log
+
+# Experimental or backup properties (if created dynamically)
+/CSMS/config.properties.bak
